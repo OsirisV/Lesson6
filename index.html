@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Banner Cycler</title>
+    <script>
+        var banners = ["banner1.jpg", "banner2.jpg", "banner3.jpg"];
+        var range = 3;
+        function run() {
+            setInterval(cycle, 2000);
+        }
+        function cycle() {
+        var counter = Math.round(Math.random() * range);
+            counter++;
+            if(counter == banners.length) counter = 0;
+            document.getElementById("banner").src = banners[counter];
+        }
+    </script>
+</head>
+<body onload = "run();">
+    <img id="banner" alt="banner" src="banner1.jpg" />
+</body>
+</html>
